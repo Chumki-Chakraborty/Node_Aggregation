@@ -1,0 +1,20 @@
+const express=require('express')
+const ApiController = require('../controller/ApiController')
+const setlimit = require('../middleware/ratelimit')
+const route=express.Router()
+
+route.post('/postdata',ApiController.postdata)
+route.get('/alldata',ApiController.AllData)
+// --------------AGGREGATION-----------//
+route.get('/getdata',ApiController.getdata)
+route.get('/groupdata',ApiController.groupdata)
+route.get('/totalemp/data',ApiController.totalemp)
+route.get('/totalemp/fieldcount',ApiController.Totalemp_fieldcount)
+route.get('/totalsalary',ApiController.salarycount)
+route.get('/sortdata',ApiController.sort)
+route.get('/paginate',ApiController.paginate)
+route.get('/project',ApiController.project)
+route.get('/addfield',ApiController.AddField)
+route.get('/replaceroot',ApiController.ReplaceRoot)
+route.get('/ratelimit',setlimit,ApiController.RateLimit)
+module.exports=route
