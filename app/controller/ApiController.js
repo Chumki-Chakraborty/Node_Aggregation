@@ -156,7 +156,7 @@ class UserController {
     // ----------------------for paginate--------------------//
     paginate = async (req, res) => {
         try {
-            const gdata = await USermodel.find()
+            const gdata =  USermodel.find()
             let options =
             {
                 page: 1,
